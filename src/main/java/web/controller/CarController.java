@@ -20,7 +20,7 @@ public class CarController {
 
     @GetMapping("/cars")
     public String Cars(@RequestParam(value = "carNumber") Optional<Integer> count, Model model) {
-        model.addAttribute("cars", carService.getCars(count.orElse(0)));
+        model.addAttribute("cars", carService.getCarsByNumber(count.orElse(0)));
         return "cars";
     }
 }

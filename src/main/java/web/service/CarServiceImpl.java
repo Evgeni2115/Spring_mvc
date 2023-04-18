@@ -7,15 +7,17 @@ import web.model.Car;
 
 import java.util.List;
 @Service
-public class CarServiceImpl implements CarService{
+public class CarServiceImpl implements CarService {
 
     private CarDao carDao;
+
     @Autowired
-    public CarServiceImpl(CarDao carDao){
+    public CarServiceImpl(CarDao carDao) {
         this.carDao = carDao;
     }
+
     @Override
-    public List<Car> getCars(int carNumber) {
-        return carDao.getCar(carNumber);
+    public List<Car> getCarsByNumber(int carNumber) {
+        return carDao.getsubList(carNumber);
     }
 }
